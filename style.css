@@ -1,0 +1,102 @@
+:root {
+  --bg: linear-gradient(135deg, #fafafa, #f0f0ff);
+  --text: #1e1e1e;
+  --muted: #555;
+  --accent: #7b61ff;
+  --font: "Plus Jakarta Sans", system-ui, sans-serif;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-blur: 12px;
+  --card-border: rgba(200, 200, 255, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: linear-gradient(135deg, #1a1a1a, #1e1e2e);
+    --text: #eee;
+    --muted: #aaa;
+    --accent: #a48aff;
+    --card-bg: rgba(30, 30, 40, 0.6);
+    --card-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-attachment: fixed;
+}
+
+main {
+  padding: 2rem;
+  animation: fadeIn 1.2s ease both;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
+  max-width: 500px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.links a {
+  display: inline-block;
+  margin: 0.3rem 0.6rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
